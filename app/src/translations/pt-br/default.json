@@ -1,0 +1,28 @@
+{
+    "general": {
+        "loading": "Carregando...",
+        "bookCall": "Marque uma chamada gratiz"
+    },
+    "acting": {
+        "button": "Contato",
+        "trabalhista": "Trabalhista",
+        "tributario": "Tributário"
+    },
+    "team": {
+        "title": "Equipe",
+        "socio": "Sócios",
+        "associado": "Associado"
+    },
+    "contact": {
+        "send": "enviar",
+        "placeHolderName": "nome",
+        "placeHolderEmail": "email",
+        "placeHolderPhone": "telefone",
+        "placeHolderMessage": "mensagem",
+        "validation": {
+            "required": "Campo obritatório",
+            "invalidEmail": "Email inválido",
+            "toShort": "Texto muito curto"
+        }
+    }
+}

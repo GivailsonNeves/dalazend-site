@@ -1,0 +1,21 @@
+.Team {
+  .area-call {
+    padding: 20px 0;
+    color: white;
+    font-size: 2em;
+    margin-bottom: 80px;
+    background: #a58d69 url(../../../assets/images/clave.png) no-repeat 95% 80%;
+    strong {
+      color: white;
+    }
+    h2 {
+      color: white;
+      padding: 0;
+    }
+  }
+  background: transparent url(../../../assets/images/team.png) no-repeat bottom
+    center;
+  .group-members {
+    position: relative;
+  }
+}

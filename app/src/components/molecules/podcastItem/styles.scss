@@ -1,0 +1,26 @@
+.PodcastItem {
+    background-color: transparent;
+    margin: 16px 0;
+    border-radius: 0;
+    border: 0 none;
+    flex-direction: row;
+
+    .imageButton{
+        background-color: transparent;
+        border: none;
+    }
+    img{
+        padding-right: 8px;
+        &.avatar {
+            width: 64px;
+            height: 64px;
+        }
+    }
+    div{
+        flex-direction: column;
+        padding: 14.5px 0 ;
+    }
+    span{
+        color: #8D9A8D;
+    }
+}

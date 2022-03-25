@@ -1,0 +1,32 @@
+.acting-item {
+  cursor: pointer;
+  h4 {
+    background-color: #d7d1c9;
+    text-align: center;
+    text-transform: uppercase;
+    color: black;
+    padding: 5px 8px;
+    margin: 0 auto;
+    font-weight: 300;
+  }
+  & > div {
+    margin-top: 0;
+    padding: 0;
+    border: 1px #d7d1c9 solid;
+    max-height: 0;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+    pointer-events: none;
+  }
+  &:hover,
+  &:active,
+  &.active {
+    & > div {
+      margin-top: 15px;
+      max-height: 100%;
+      padding: 15px;
+      opacity: 1;
+    }
+  }
+  margin-bottom: 30px;
+}

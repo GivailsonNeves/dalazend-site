@@ -1,0 +1,31 @@
+.player {
+    background-color: transparent;
+    margin: 16px 0;
+    border-radius: 0;
+    border: 0 none;
+    flex-direction: row;
+    padding-top: 48px;
+
+    img {
+        padding: 16px;
+        &.avatar {
+
+            width: 180px;
+            height: 180px;
+        }
+    }
+
+    .contentPlayer {
+        text-align: start;
+        padding: 12px 0 0 16px;
+
+        img {
+            padding: 0;
+        }
+        span {
+            width: 65%;
+            color: #8d9a8d;
+            padding-left: 8px;
+        }
+    }
+}

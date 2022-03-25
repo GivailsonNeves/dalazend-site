@@ -1,0 +1,86 @@
+.header {
+  background: transparent;
+  position: fixed !important;
+  width: 100%;
+  z-index: 40;
+  padding: 30px 0;
+  transition: all 0.3s ease-in-out;
+
+  @media screen and (max-width: 991px) {
+    .container {
+      margin: 0;
+      padding: 0;
+    }
+  }
+  .title {
+    color: #52555d;
+    text-decoration: none;
+    font-size: 38px;
+    img {
+      width: 100%;
+      max-width: 370px;
+      transition: all 0.3s ease-in-out;
+    }
+    @media screen and (max-width: 991px) {
+      font-size: 20px;
+    }
+  }
+  @media screen and (max-width: 678px) {
+    padding: 5px;
+    background: rgba($color: #fff, $alpha: 0.95);
+    .title {
+      img {
+        max-width: 200px;
+      }
+    }
+  }
+  @media screen and (min-width: 679px) {
+    &.over {
+      padding: 10px 0;
+      background: rgba($color: #fff, $alpha: 0.9);
+      .title {
+        img {
+          max-width: 320px;
+        }
+      }
+      .navbar-collapse.show {
+        background-color: rgba($color: #fff, $alpha: 0.9);
+      }
+    }
+  }
+  .navbar-brand {
+    padding-right: 64px;
+    @media screen and (max-width: 991px) {
+      padding-right: 0;
+      padding-left: 15px;
+    }
+  }
+  .navbar-collapse {
+    justify-content: flex-end;
+  }
+  .nav-link {
+    color: #323232;
+    padding: 0;
+    @media screen and (max-width: 991px) {
+      padding: 15px;
+      &:not(:last-child) {
+        border-bottom: 1px #ccc solid;
+      }
+    }
+  }
+
+  .nav-link::after {
+    content: "";
+    width: 10px;
+    margin: 0 20px;
+    color: #323232;
+    border: #8d9a8d solid 1px;
+    @media screen and (max-width: 991px) {
+      margin: 0;
+      border: 0 none;
+    }
+  }
+  .nav-link:last-child::after {
+    border: none;
+  }
+}

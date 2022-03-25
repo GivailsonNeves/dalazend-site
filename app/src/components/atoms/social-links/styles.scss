@@ -1,0 +1,15 @@
+.socialButtons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    a {
+        margin-right: 16px;
+        font-size: 54px;
+        line-height: 1;
+        color: #a48d68;
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}

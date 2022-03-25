@@ -1,0 +1,37 @@
+.floating-socials {
+    position: fixed;
+    right: 0;
+    top: 107px;
+    z-index: 999;
+    background-color: rgba($color: #ffffff, $alpha: 0.5);
+
+    & > a {
+        display: block;
+        background-color: #649365;
+        border: 0 none !important;
+        padding: 0;
+        text-decoration: none;
+        span {
+            color: white;
+            padding: 40px 12px;
+            display: block;
+            writing-mode: vertical-lr;
+            transform: rotate(-180deg);
+            text-transform: uppercase;
+        }
+    }
+    & > div {
+        display: block;
+        margin-top: 10px;
+        .socialButtons {
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            a {
+                margin: 10px 0;
+            }
+        }
+    }
+}

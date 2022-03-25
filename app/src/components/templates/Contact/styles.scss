@@ -1,0 +1,105 @@
+.Contact {
+  padding: 78px 0;
+  border-top: 1px gray solid;
+  margin-top: 50px;
+  position: relative;
+  input[type="phone"] {
+    border: 0 none;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba($color: #000000, $alpha: 0.6);
+  }
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 78px;
+    left: 0;
+    width: 45%;
+    border-bottom: 1px gray solid;
+  }
+  @media screen and (max-width: 899px) {
+    padding: 78px 50px;
+  }
+  small {
+    color: #eb5b5b;
+    display: block;
+    min-height: 25px;
+    width: 100%;
+  }
+  .call {
+    max-width: 300px;
+    margin-bottom: 30px;
+  }
+  a {
+    color: #a48d68;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .phone-numbers {
+    p {
+      margin: 5px 0;
+    }
+  }
+  .Contact-wrapper {
+    margin: 0 auto;
+
+    h2 {
+      max-width: 580px;
+      width: 100%;
+      margin: 0 auto;
+      font-weight: 400;
+      margin-bottom: 30px;
+
+      @media screen and (max-width: 499px) {
+        font-size: 48px;
+      }
+    }
+    .form-control {
+      box-shadow: 0 0 10px gray;
+    }
+    form {
+      &.principal-fields {
+        input:not(input[type="checkbox"]) {
+          height: 48px;
+          width: 100%;
+          margin-bottom: 15px;
+        }
+        .text-right {
+          text-align: right;
+        }
+        button {
+          height: 48px;
+          padding: 0 35px;
+          font-size: 1.1em;
+          line-height: 0.5em;
+          &.btn-success {
+            background-color: #7cb87d;
+            text-transform: uppercase;
+          }
+        }
+        @media screen and (max-width: 899px) {
+          align-items: flex-end;
+          & {
+            flex-direction: column;
+            & > div {
+              width: 100%;
+              margin-bottom: 15px;
+              margin-right: 0 !important;
+            }
+          }
+
+          button {
+            margin-left: 0;
+            width: 50%;
+          }
+        }
+        @media screen and (max-width: 600px) {
+          button {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

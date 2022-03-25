@@ -1,0 +1,55 @@
+.team-member {
+  text-align: center;
+  color: #483923;
+  img {
+    width: 70%;
+  }
+  margin-bottom: 30px;
+  .description {
+    display: none;
+    width: 100%;
+    left: 0;
+    position: absolute;
+    padding: 30px;
+    border: 1px #473b23 solid;
+    @media screen and (max-width: 768px) {
+      width: 90%;
+      left: 5%;
+    }
+  }
+  h3 {
+    display: flex;
+    height: 100px;
+    padding: 0 30px;
+    font-size: 1.6em;
+    font-weight: 300;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+  &.visible {
+    padding-bottom: 150px;
+    h3 {
+      color: #473b23;
+      background-color: #d8d1c9;
+      position: relative;
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 2px;
+        height: 30px;
+        left: 50%;
+        margin-left: -1px;
+        bottom: -30px;
+        background-color: #d8d1c9;
+      }
+    }
+    @media screen and (max-width: 768px) {
+      padding-bottom: 450px;
+    }
+    .description {
+      display: block;
+    }
+  }
+}

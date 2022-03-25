@@ -1,0 +1,26 @@
+{
+    "general": {
+        "loading": "Loading...",
+        "bookCall": "Book a free call"
+    },
+    "acting": {
+        "button": "Contact",
+        "trabalhista": "Trabalhista",
+        "tributario": "Tributário"
+    },
+    "team": {
+        "title": "Equipe",
+        "socio": "Sócios",
+        "associado": "Associado"
+    },
+    "contact": {
+        "send": "enviar",
+        "placeHolderName": "nome",
+        "placeHolderEmail": "email",
+        "placeHolderPhone": "telefone",
+        "placeHolderMessage": "mensagem",
+        "validation": {
+            "required": "Campo obritatório"
+        }
+    }
+}

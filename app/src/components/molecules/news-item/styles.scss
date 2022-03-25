@@ -1,0 +1,32 @@
+.NewsItem {
+    background-color: transparent;
+    margin-bottom: 60px;
+    border-radius: 0;
+    border: 0 none;
+    .card-img, .card-img-top {
+        border-radius: 0;
+    }
+    .card-body {
+        padding: 24px 30px;
+    }
+    small {
+        color: #8D9A8D;
+        font-size: 0.87em;
+    }
+    .card-title {
+        margin-top: 16px;
+        font-size: 1.87em;
+    }
+    .image-preview {
+        overflow-y: hidden;
+        max-height: 240px;
+        
+        img {
+            min-height: 240px;
+            width: auto;
+            min-width: 340px;
+            width: 100%;
+        }
+
+    }
+}

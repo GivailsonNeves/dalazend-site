@@ -1,0 +1,43 @@
+.About {
+  padding: 250px 0 63px 0;
+  position: relative;
+  .background {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    text-align: right;
+    z-index: 0;
+    img {
+      width: 100%;
+      max-width: 1400px;
+    }
+  }
+  @media screen and (max-width: 678px) {
+    .background {
+      img {
+        width: auto;
+        height: 300px;
+      }
+    }
+    padding-top: 300px;
+  }
+  .content {
+    position: relative;
+    z-index: 10;
+  }
+
+  h4:first-child {
+    color: #8d9a8d;
+    text-transform: uppercase;
+    margin-top: 154px;
+  }
+  h3 {
+    line-height: 80%;
+    font-size: 3.298em;
+    margin-top: 16px;
+    padding: 32px;
+    border: 1px solid #e2e2e2;
+    box-sizing: border-box;
+  }
+}
