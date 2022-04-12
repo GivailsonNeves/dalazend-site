@@ -1,4 +1,3 @@
-import { MouseEventHandler } from "react";
 import { useTranslation } from "react-i18next";
 
 import "./styles.scss";
@@ -19,7 +18,7 @@ const TeamMember: React.FC<TeamMemberProps> = ({
   selected,
 }) => {
   const hdlSelect = () => onSelected(index);
-  const [_, i18n] = useTranslation();
+  const [, i18n] = useTranslation();
   const { title, text } = content[i18n.language];
 
   return (

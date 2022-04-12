@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 import { Link, useLocation } from "react-router-dom";
@@ -9,25 +9,22 @@ import Logo from "../../../assets/images/main_logo.png";
 
 interface HeaderProps {
   showNavigation?: boolean;
+  offset: number;
 }
 
-function Header({ showNavigation = true }: HeaderProps) {
-  const [offset, setOffset] = useState(0);
+function Header({ offset, showNavigation = true }: HeaderProps) {
   const [isNavCollapsed, setIsNavCollapsed] = useState(false);
   const location = useLocation();
   const [t] = useTranslation();
 
-  useEffect(() => {
-    function updateOffset() {
-      setOffset(window.pageYOffset);
-    }
-    window.addEventListener("scroll", updateOffset);
-    updateOffset();
+  const closeMenu = (event: any, elementName: string) => {
+    event.preventDefault();
+    const scrollTop = document.getElementById(elementName)?.offsetTop || 0;
+    window.scrollTo(0, scrollTop - 120 || 0);
 
-    return () => window.removeEventListener("scroll", updateOffset);
-  }, [setOffset]);
-
-  const closeMenu = () => setIsNavCollapsed(false);
+    setIsNavCollapsed(false);
+    return false;
+  };
   const handleNavCollapse = () => setIsNavCollapsed(!isNavCollapsed);
 
   const renderHREF = (path: string) => {
@@ -48,17 +45,26 @@ function Header({ showNavigation = true }: HeaderProps) {
             onClick={handleNavCollapse}
           />
           <Navbar.Collapse id="responsive-navbar-nav">
-            <Nav.Link onClick={closeMenu} href={renderHREF("#Office")}>
+            <Nav.Link
+              onClick={(event: any) => closeMenu(event, "Office")}
+              href={renderHREF("#Office")}
+            >
               O Escritório
             </Nav.Link>
-            <Nav.Link onClick={closeMenu} href={renderHREF("#Acting")}>
+            <Nav.Link
+              onClick={(event: any) => closeMenu(event, "Acting")}
+              href={renderHREF("#Acting")}
+            >
               Atuação
             </Nav.Link>
-            <Nav.Link onClick={closeMenu} href={renderHREF("#Team")}>
+            <Nav.Link
+              onClick={(event: any) => closeMenu(event, "Team")}
+              href={renderHREF("#Team")}
+            >
               Equipe
             </Nav.Link>
             <Nav.Link
-              onClick={closeMenu}
+              onClick={(event: any) => closeMenu(event, "Contact")}
               href={renderHREF("#Contact")}
               className="last"
             >

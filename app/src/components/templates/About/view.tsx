@@ -11,7 +11,7 @@ export interface AboutProps {
 
 const About: React.FC<AboutProps> = ({ aboutData }) => {
   const [t, i18n] = useTranslation();
-  const { title, text } = aboutData.content[i18n.language];
+  const { text } = aboutData.content[i18n.language];
   return (
     <section id="About" className="About">
       <div className="background">

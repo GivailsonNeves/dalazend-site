@@ -135,7 +135,7 @@ const Contact: React.FC<ContactProps> = ({ sendSubscribe, contactData }) => {
                     </Col>
                     <Col md={12} sm={12}>
                       <Field name="phone">
-                        {({}) => (
+                        {() => (
                           <InputMask
                             id="phone"
                             type="phone"
@@ -156,7 +156,7 @@ const Contact: React.FC<ContactProps> = ({ sendSubscribe, contactData }) => {
                     </Col>
                     <Col md={12} sm={12}>
                       <Field name="message">
-                        {({}) => (
+                        {() => (
                           <Form.Control
                             id="message"
                             as="textarea"

@@ -17,7 +17,7 @@ const AddressLocationItem: React.FC<AddressLocationItemProps> = ({
 }) => {
   return (
     <div className="address-location-item">
-      <iframe src={map} loading="lazy"></iframe>
+      <iframe title={title} src={map} loading="lazy"></iframe>
       <div>
         <p>
           <strong>{title}</strong>

@@ -6,7 +6,8 @@ export interface ActingItemProps {
 }
 
 const ActingItem: React.FC<ActingItemProps> = ({ content }) => {
-  const [_, i18n] = useTranslation();
+  //@ts-ignore
+  const [, i18n] = useTranslation();
   const { title, text } = content[i18n.language];
   return (
     <div className="acting-item">

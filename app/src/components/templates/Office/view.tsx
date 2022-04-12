@@ -9,7 +9,7 @@ export interface OfficeProps {
 }
 
 const Office: React.FC<OfficeProps> = ({ officeData }) => {
-  const [_, i18n] = useTranslation();
+  const [, i18n] = useTranslation();
   const { title, text } = officeData.content[i18n.language];
   const { gallery } = officeData;
   return (
@@ -29,7 +29,7 @@ const Office: React.FC<OfficeProps> = ({ officeData }) => {
             <div className="carousel-area">
               <Carousel fade>
                 {gallery.map((g: any, index: number) => (
-                  <Carousel.Item>
+                  <Carousel.Item key={index}>
                     <figure>
                       <img
                         className="d-block w-100"

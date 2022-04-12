@@ -11,8 +11,7 @@ export interface TeamProps {
 
 const Team: React.FC<TeamProps> = ({ teamData }) => {
   const [selected, setSelected] = useState<string | number>(-1);
-  const [t, i18n] = useTranslation();
-  const { title, text } = teamData.content[i18n.language];
+  const [t] = useTranslation();
   const { associado, socio } = teamData.team;
   return (
     <section className="Team" id="Team">

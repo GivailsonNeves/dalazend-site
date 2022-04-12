@@ -1,6 +1,5 @@
 import { Button, Col, Container, Row } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
-import { GiInjustice, GiPassport } from "react-icons/gi";
 import { useLocation } from "react-router-dom";
 import ActingItem from "../../atoms/acting-item";
 

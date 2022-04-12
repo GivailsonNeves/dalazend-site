@@ -1,5 +1,4 @@
-import React from "react";
-import { useTranslation } from "react-i18next";
+import React, { useEffect, useState } from "react";
 import About from "../../components/templates/About";
 import Acting from "../../components/templates/Acting";
 import AddressLocation from "../../components/templates/AddressLocation";
@@ -14,11 +13,21 @@ import Office from "../../components/templates/Office";
 export interface HomeViewProps {}
 
 const HomeView: React.FC<HomeViewProps> = () => {
-  const [t] = useTranslation();
+  const [offset, setOffset] = useState(0);
+
+  useEffect(() => {
+    function updateOffset() {
+      setOffset(window.pageYOffset);
+    }
+    window.addEventListener("scroll", updateOffset);
+    updateOffset();
+
+    return () => window.removeEventListener("scroll", updateOffset);
+  }, [setOffset]);
 
   return (
     <>
-      <Header />
+      <Header offset={offset} />
       <About />
       <Office />
       <Acting />
