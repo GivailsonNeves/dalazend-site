@@ -31,7 +31,7 @@ const Acting: React.FC<ActingProps> = ({ actionsData }) => {
                 dangerouslySetInnerHTML={{ __html: text }}
               />
             </Col>
-            <Col className="text-right">
+            <Col className="contact-button">
               <Button href={renderHREF("#Contact")}>
                 {t("acting.button")}
               </Button>

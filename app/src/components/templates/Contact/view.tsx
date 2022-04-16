@@ -16,11 +16,11 @@ import {
 import "./styles.scss";
 
 export interface ContactProps {
-  sendSubscribe: any;
+  sendContact: any;
   contactData: any;
 }
 
-const Contact: React.FC<ContactProps> = ({ sendSubscribe, contactData }) => {
+const Contact: React.FC<ContactProps> = ({ sendContact, contactData }) => {
   const [t, i18n] = useTranslation();
   const { title, text } = contactData.content[i18n.language];
   const { phones } = contactData;
@@ -52,13 +52,22 @@ const Contact: React.FC<ContactProps> = ({ sendSubscribe, contactData }) => {
   ) => {
     setFormSentError(false);
     console.log(values);
-    // const res = await sendSubscribe(values);
-    // if (res) {
-    //   formikHelpers.resetForm();
-    //   setFeedbackMessage(t("contact.sendSucess"));
-    // } else {
-    //   setFormSentError(true);
-    // }
+    const res = await sendContact(values);
+    if (res) {
+      const { status, message } = res;
+      if (["mail_sent", "validation_failed"].includes(status)) {
+        if (status === "mail_sent") {
+          formikHelpers.resetForm();
+        } else {
+          console.error(`email: ${message}`);
+        }
+        setFeedbackMessage(t(`contact.${status}`));
+      } else {
+        setFeedbackMessage(t(`contact.uknow-error`));
+      }
+    } else {
+      setFormSentError(true);
+    }
   };
 
   return (
@@ -184,7 +193,9 @@ const Contact: React.FC<ContactProps> = ({ sendSubscribe, contactData }) => {
                           variant="success"
                           type="submit"
                         >
-                          {t("contact.send")}
+                          {isSubmitting
+                            ? t("contact.sending")
+                            : t("contact.send")}
                         </Button>
                       </div>
                     </Col>
@@ -202,7 +213,7 @@ const Contact: React.FC<ContactProps> = ({ sendSubscribe, contactData }) => {
         </Row>
       </Container>
       <FeedbackModal
-        title="Subscribe"
+        title={t("contact.feedback-modal")}
         message={feedbackMessage}
         handleClose={() => setFeedbackMessage("")}
       />

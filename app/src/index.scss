@@ -97,6 +97,7 @@ section {
     }
     @media screen and(min-width: 800px) {
       display: flex;
+      align-items: flex-start;
       & > figure {
         flex: 1;
       }
@@ -107,11 +108,9 @@ section {
     }
   }
   &-columns {
-    @media screen and(min-width: 800px) {
-      display: flex;
-      & > .wp-block-column {
-        flex: 1;
-      }
+    display: flex;
+    & > .wp-block-column {
+      margin-right: 15px;
     }
   }
   &-quote {

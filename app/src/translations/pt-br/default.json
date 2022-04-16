@@ -1,7 +1,8 @@
 {
     "general": {
         "loading": "Carregando...",
-        "bookCall": "Marque uma chamada gratiz"
+        "bookCall": "Marque uma chamada gratiz",
+        "close": "fechar"
     },
     "acting": {
         "button": "Contato",
@@ -11,14 +12,19 @@
     "team": {
         "title": "Equipe",
         "socio": "Sócios",
-        "associado": "Associado"
+        "associado": "Associados"
     },
     "contact": {
         "send": "enviar",
+        "sending": "enviando...",
         "placeHolderName": "nome",
         "placeHolderEmail": "email",
         "placeHolderPhone": "telefone",
+        "feedback-modal": "Contato",
         "placeHolderMessage": "mensagem",
+        "validation_failed": "Campo obrigatório!",
+        "mail_sent": "Agradecemos o contato!",
+        "uknow-error": "Erro ao enviar contato, tente novamente!",
         "validation": {
             "required": "Campo obritatório",
             "invalidEmail": "Email inválido",

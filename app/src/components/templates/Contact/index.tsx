@@ -3,8 +3,8 @@ import { Dispatch, RootState } from "../../../store";
 import Contact from "./view";
 
 const mapDispatch = (dispatch: Dispatch) => ({
-  sendSubscribe: async (subcribeData: any) =>
-    dispatch.subscribe.sendAsync(subcribeData),
+  sendContact: async (subcribeData: any) =>
+    dispatch.contact.sendAsync(subcribeData),
 });
 
 const mapState = (state: RootState) => ({

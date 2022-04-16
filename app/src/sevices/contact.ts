@@ -5,11 +5,17 @@ export default class ContactApi {
     return api.get(`v1/contact`);
   }
   static async send(data: any) {
-    console.log(data)
-    return api.post(`v1/subscribe`, {
-      ...data,
-      name: data.name.substring(0, data.name.indexOf(' ')),
-      lastName: data.name.substring(data.name.indexOf(' '))
+    const formData = new FormData();
+    formData.append("your-name", data.name);
+    formData.append("your-email", data.email);
+    formData.append("your-phone", data.phone);
+    formData.append("your-message", data.message);
+    return api.post(
+      `${process.env.REACT_APP_BASE_DOMAIN}/wp-json/contact-form-7/v1/contact-forms/169/feedback`, 
+    formData, {
+      headers: {
+        "Content-Type": "multipart/form-data"
+      }
     });
   }
 }
