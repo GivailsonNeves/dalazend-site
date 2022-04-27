@@ -48,11 +48,11 @@ const App: React.FC<AppProps> = ({ initAll }) => {
 const mapDispatch = (dispatch: Dispatch) => ({
   initAll: async () =>
     Promise.all([
-      dispatch.socialLinks.getAsync(),
-      dispatch.about.getAsync(),
-      dispatch.team.getAsync(),
       dispatch.about.getAsync(),
       dispatch.office.getAsync(),
+      dispatch.socialLinks.getAsync(),
+      dispatch.team.getAsync(),
+      dispatch.about.getAsync(),
       dispatch.contact.getAsync(),
       dispatch.address.getAsync(),
       dispatch.actions.getAsync(),

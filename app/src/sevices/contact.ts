@@ -2,7 +2,8 @@ import api from './api-client';
 
 export default class ContactApi {
   static async get() {
-    return api.get(`v1/contact`);
+    //@ts-ignore
+    return api.get(`v1/contact?${window.VERSION_HASH}`);
   }
   static async send(data: any) {
     const formData = new FormData();
