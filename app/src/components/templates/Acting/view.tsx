@@ -15,6 +15,9 @@ const Acting: React.FC<ActingProps> = ({ actionsData }) => {
   const { actions } = actionsData;
   const location = useLocation();
 
+  const listActions: any[] =
+    actions.length === undefined ? actions.trabalhista : actions;
+
   const renderHREF = (path: string) => {
     return location.pathname === "/" ? path : `/${path}`;
   };
@@ -43,27 +46,15 @@ const Acting: React.FC<ActingProps> = ({ actionsData }) => {
         <div className="cabecalho">
           <div className="infoname-md">
             <h3>
-              {/* <GiPassport /> */}
               {t("acting.trabalhista")}
               <span />
-              {/* <GiInjustice />  */}
               {t("acting.tributario")}
             </h3>
-            <Row>
-              <Col></Col>
-              <Col></Col>
-            </Row>
           </div>
           <Row>
-            {actions?.trabalhista?.length &&
-              actions?.trabalhista.map((a: any, index: number) => (
+            {listActions.length &&
+              listActions.map((a: any, index: number) => (
                 <Col xs={12} md={12} key={index}>
-                  <ActingItem {...a} />
-                </Col>
-              ))}
-            {actions?.tributario?.length &&
-              actions?.tributario.map((a: any, index: number) => (
-                <Col xs={12} key={index} md={12}>
                   <ActingItem {...a} />
                 </Col>
               ))}

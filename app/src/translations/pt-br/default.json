@@ -4,6 +4,12 @@
         "bookCall": "Marque uma chamada gratiz",
         "close": "fechar"
     },
+    "menu": {
+        "the-office": "O escritório",
+        "actions": "Ações",
+        "team": "Time",
+        "contact": "Contato"
+    },
     "acting": {
         "button": "Contato",
         "trabalhista": "Trabalhista",

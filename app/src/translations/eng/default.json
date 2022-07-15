@@ -4,29 +4,35 @@
         "bookCall": "Book a free call",
         "close": "close"
     },
+    "menu": {
+        "the-office": "The Firm",
+        "actions": "Actions",
+        "team": "Team",
+        "contact": "Contact"
+    },
     "acting": {
         "button": "Contact",
-        "trabalhista": "Trabalhista",
-        "tributario": "Tributário"
+        "trabalhista": "LABOR",
+        "tributario": "TAX"
     },
     "team": {
-        "title": "Equipe",
-        "socio": "Sócios",
-        "associado": "Associados"
+        "title": "Team",
+        "socio": "Partners",
+        "associado": "Associates"
     },
     "contact": {
-        "send": "enviar",
-        "sending": "enviando...",
-        "placeHolderName": "nome",
+        "send": "send",
+        "sending": "sending...",
+        "placeHolderName": "name",
         "placeHolderEmail": "email",
-        "placeHolderPhone": "telefone",
-        "feedback-modal": "Contato",
-        "placeHolderMessage": "mensagem",
-        "validation_failed": "Campo obrigatório!",
-        "mail_sent": "Agradecemos o contato!",
-        "uknow-error": "Erro ao enviar contato, tente novamente!",
+        "placeHolderPhone": "Phone",
+        "feedback-modal": "Contact",
+        "placeHolderMessage": "mensage",
+        "validation_failed": "required field!",
+        "mail_sent": "Thanks for the contact!",
+        "uknow-error": "Fail to send, try again!",
         "validation": {
-            "required": "Campo obritatório"
+            "required": "required field"
         }
     }
 }

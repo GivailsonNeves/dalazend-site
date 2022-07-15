@@ -71,8 +71,8 @@ function get_team($params)
           "text" => $t->post_content,
         ],
         "eng" => [
-          "title" => $t->post_title,
-          "text" => $t->post_content,
+          "title" =>  get_field("field_team_title", $t->ID),
+          "text" =>  get_field("field_team_text", $t->ID),
         ],
       ]
     ];
@@ -92,21 +92,21 @@ function get_actions($params)
     [
       'post_type' => 'acting',
       'posts_per_page' => 30,
-      'orderby' => 'post_date',
+      'orderby' => 'menu_order',
       'order' => 'ASC'
     ]
   );
   foreach ($team as $t) {
     $tipo = get_field("tipo", $t->ID);
-    $result->actions[$tipo][] = [
+    $result->actions[] = [
       "content" => [
         "ptBR" => [
           "title" => $t->post_title,
           "text" => $t->post_content,
         ],
         "eng" => [
-          "title" => $t->post_title,
-          "text" => $t->post_content,
+          "title" => get_field("field_acting_title", $t->ID),
+          "text" => get_field("field_acting_text", $t->ID),
         ],
       ]
     ];
@@ -115,6 +115,31 @@ function get_actions($params)
   $response->set_status(200);
   return $response;
 }
+function get_address($params)
+{
+  $data = [];
+  $address = get_posts(
+    [
+      'post_type' => 'address',
+      'posts_per_page' => 30,
+      'orderby' => 'post_date',
+      'order' => 'ASC'
+    ]
+  );
+  foreach ($address as $a) {
+    $data[] = [
+      "title" => $a->post_title,
+      "text" => $a->post_content,
+      "number" => get_field("field_address_phone", $a->ID),
+      "state" => get_field("field_estado", $a->ID),
+      "map" => get_field("field_address_location", $a->ID),
+    ];
+  }
+  $response = new WP_REST_Response($data);
+  $response->set_status(200);
+  return $response;
+}
+
 
 
 function set_subscription(WP_REST_Request $request)
@@ -178,9 +203,12 @@ add_action('rest_api_init', function () {
     'methods' => 'POST',
     'callback' => 'set_subscription',
   ]);
+
+  register_rest_route('options/v1', '/address', [
+    'methods' => 'GET',
+    'callback' => 'get_address',
+  ]);
 });
-
-
 
 function get_images($post_content)
 {

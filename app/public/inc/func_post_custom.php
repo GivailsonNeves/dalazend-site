@@ -149,22 +149,6 @@ if (function_exists("register_field_group")) {
 	register_field_group(array(
 		'id' => 'acf_acting',
 		'title' => 'Acting',
-		'fields' => array(
-			array(
-				'key' => 'field_5b7a965906c82',
-				'label' => 'Tipo',
-				'name' => 'tipo',
-				'type' => 'select',
-				'choices' => array(
-					0 => 'Tipo',
-					'trabalhista' => 'Trabalhista',
-					'tributario' => 'Tributário',
-				),
-				'default_value' => '',
-				'allow_null' => 0,
-				'multiple' => 0,
-			),
-		),
 		'location' => array(
 			array(
 				array(

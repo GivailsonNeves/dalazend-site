@@ -15,7 +15,7 @@ interface HeaderProps {
 function Header({ offset, showNavigation = true }: HeaderProps) {
   const [isNavCollapsed, setIsNavCollapsed] = useState(false);
   const location = useLocation();
-  const [t] = useTranslation();
+  const [t, i18n] = useTranslation();
 
   const closeMenu = (event: any, elementName: string) => {
     event.preventDefault();
@@ -30,6 +30,7 @@ function Header({ offset, showNavigation = true }: HeaderProps) {
   const renderHREF = (path: string) => {
     return location.pathname === "/" ? path : `/${path}`;
   };
+  const changeLanguage = (lng: string) => i18n.changeLanguage(lng);
 
   return (
     <div className={`header ${offset > 30 ? "over" : ""}`}>
@@ -49,28 +50,43 @@ function Header({ offset, showNavigation = true }: HeaderProps) {
               onClick={(event: any) => closeMenu(event, "Office")}
               href={renderHREF("#Office")}
             >
-              O Escritório
+              {t("menu.the-office")}
             </Nav.Link>
             <Nav.Link
               onClick={(event: any) => closeMenu(event, "Acting")}
               href={renderHREF("#Acting")}
             >
-              Atuação
+              {t("menu.actions")}
             </Nav.Link>
             <Nav.Link
               onClick={(event: any) => closeMenu(event, "Team")}
               href={renderHREF("#Team")}
             >
-              Equipe
+              {t("menu.team")}
             </Nav.Link>
             <Nav.Link
               onClick={(event: any) => closeMenu(event, "Contact")}
               href={renderHREF("#Contact")}
               className="last"
             >
-              Contato
+              {t("menu.contact")}
             </Nav.Link>
           </Navbar.Collapse>
+          <span className="language-switcher">
+            <a
+              onClick={() => changeLanguage("eng")}
+              className={i18n.language === "eng" ? "active" : ""}
+            >
+              EN
+            </a>{" "}
+            |{" "}
+            <a
+              onClick={() => changeLanguage("ptBR")}
+              className={i18n.language === "ptBR" ? "active" : ""}
+            >
+              PT
+            </a>
+          </span>
         </Navbar>
       </Container>
     </div>
