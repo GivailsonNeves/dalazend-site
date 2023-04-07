@@ -6,14 +6,15 @@
     },
     "menu": {
         "the-office": "O escritório",
-        "actions": "Ações",
-        "team": "Time",
+        "actions": "Atuação",
+        "team": "Equipe",
         "contact": "Contato"
     },
     "acting": {
         "button": "Contato",
         "trabalhista": "Trabalhista",
-        "tributario": "Tributário"
+        "tributario": "Tributário",
+        "regulatorio": "REGULATÓRIO E COMPLIANCE ESTRATÉGICO"
     },
     "team": {
         "title": "Equipe",

@@ -13,7 +13,9 @@
     "acting": {
         "button": "Contact",
         "trabalhista": "LABOR",
-        "tributario": "TAX"
+        "tributario": "TAX",
+        "regulatorio": "REGULATORY AND STRATEGIC COMPLIANCE"
+        
     },
     "team": {
         "title": "Team",

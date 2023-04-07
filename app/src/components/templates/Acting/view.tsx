@@ -1,4 +1,4 @@
-import { Button, Col, Container, Row } from "react-bootstrap";
+import { Col, Container, Row } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 import { useLocation } from "react-router-dom";
 import ActingItem from "../../atoms/acting-item";
@@ -26,7 +26,7 @@ const Acting: React.FC<ActingProps> = ({ actionsData }) => {
     <section id="Acting" className="Acting">
       <div className="header-acting">
         <Container>
-          <h2 className="lined">{title}</h2>
+          <h2 className="lined">{t("menu.actions")}</h2>
           <Row>
             <Col md={10}>
               <div
@@ -34,11 +34,11 @@ const Acting: React.FC<ActingProps> = ({ actionsData }) => {
                 dangerouslySetInnerHTML={{ __html: text }}
               />
             </Col>
-            <Col className="contact-button">
+            {/* <Col className="contact-button">
               <Button href={renderHREF("#Contact")}>
                 {t("acting.button")}
               </Button>
-            </Col>
+            </Col> */}
           </Row>
         </Container>
       </div>
@@ -49,6 +49,8 @@ const Acting: React.FC<ActingProps> = ({ actionsData }) => {
               {t("acting.trabalhista")}
               <span />
               {t("acting.tributario")}
+              <span />
+              {t("acting.regulatorio")}
             </h3>
           </div>
           <Row>
