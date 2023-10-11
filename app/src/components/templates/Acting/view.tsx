@@ -49,8 +49,6 @@ const Acting: React.FC<ActingProps> = ({ actionsData }) => {
               {t("acting.trabalhista")}
               <span />
               {t("acting.tributario")}
-              <span />
-              {t("acting.regulatorio")}
             </h3>
           </div>
           <Row>
